@@ -13,8 +13,9 @@ public class MessageModel {
     @Override
     public String toString() {
 
-        return "{Id= "+ Id + "," +
-                "Quantity= "+Quantity+"}";
+        return "[{\"Id\": \""+Id+"\"," +
+                "\"Quantity\": \""+Quantity+"\"" +
+                "}]";
     }
 
     @Override
