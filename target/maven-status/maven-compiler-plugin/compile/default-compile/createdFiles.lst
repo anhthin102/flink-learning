@@ -1,5 +1,0 @@
-com\task\Kafka_Flink_Sender$StreamGenerator.class
-com\task\MessageGenerator.class
-com\task\DataGenerator.class
-com\task\MessageModel.class
-com\task\Kafka_Flink_Sender.class
