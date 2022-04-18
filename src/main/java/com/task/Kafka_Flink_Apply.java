@@ -19,6 +19,7 @@ public class Kafka_Flink_Apply {
 
     public static void StreamStringOperation(ParameterTool parameterTool ) throws Exception {
         StreamExecutionEnvironment environment = StreamExecutionEnvironment.getExecutionEnvironment();
+        environment.setParallelism(2);
         FlinkKafkaConsumer<String> flinkKafkaConsumer = createStringConsumerForTopic(parameterTool);
         FlinkKafkaProducer<String> flinkKafkaProducer = createStringProducer(parameterTool);
         DataStream<String> stringInputStream = environment.addSource(flinkKafkaConsumer);
@@ -28,7 +29,7 @@ public class Kafka_Flink_Apply {
 
         DataStream<String> groupMessage= message.keyBy(new KeyByDescription())
                 .window(TumblingProcessingTimeWindows.of(org.apache.flink.streaming.api.windowing.time.Time.seconds(60)))
-                .process(new ProcessWindow()).setParallelism(2);
+                .process(new ProcessWindow());
         groupMessage.addSink(flinkKafkaProducer);
         environment.execute();
     }
