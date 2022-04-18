@@ -28,7 +28,7 @@ public class Kafka_Flink_Apply {
 
         DataStream<String> groupMessage= message.keyBy(new KeyByDescription())
                 .window(TumblingProcessingTimeWindows.of(org.apache.flink.streaming.api.windowing.time.Time.seconds(60)))
-                .process(new ProcessWindow());
+                .process(new ProcessWindow()).setParallelism(2);
         groupMessage.addSink(flinkKafkaProducer);
         environment.execute();
     }
