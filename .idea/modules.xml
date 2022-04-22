@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../bi-api/mwg.backbone.business/mwg.backbone.business.iml" filepath="$PROJECT_DIR$/../bi-api/mwg.backbone.business/mwg.backbone.business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bi-api/mwg.backbone.client/mwg.backbone.client.iml" filepath="$PROJECT_DIR$/../bi-api/mwg.backbone.client/mwg.backbone.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bi-api/mwg.backbone.common/mwg.backbone.common.iml" filepath="$PROJECT_DIR$/../bi-api/mwg.backbone.common/mwg.backbone.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bi-api/mwg.backbone.model/mwg.backbone.model.iml" filepath="$PROJECT_DIR$/../bi-api/mwg.backbone.model/mwg.backbone.model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bi-api/mwg.mavenparent/mwg.mavenparent.iml" filepath="$PROJECT_DIR$/../bi-api/mwg.mavenparent/mwg.mavenparent.iml" />
+    </modules>
+  </component>
+</project>
