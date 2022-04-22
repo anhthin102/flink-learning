@@ -53,8 +53,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-          <source>${target.java.version}</source>
-          <target>${target.java.version}</target>
+          <source>11</source>
+          <target>11</target>
         </configuration>
       </plugin>
       <plugin>
@@ -105,6 +105,10 @@
       <id>apache.snapshots</id>
       <name>Apache Development Snapshot Repository</name>
       <url>https://repository.apache.org/content/repositories/snapshots/</url>
+    </repository>
+    <repository>
+      <id>central</id>
+      <url>http://repo.maven.apache.org/maven2/</url>
     </repository>
   </repositories>
   <dependencies>

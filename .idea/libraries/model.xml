@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="model">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../bi-api/mwg.backbone.model/model.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
