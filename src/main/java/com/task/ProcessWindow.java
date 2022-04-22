@@ -18,6 +18,7 @@ public class ProcessWindow extends ProcessWindowFunction<MessageModel, String, I
         String kq = "[{\"Id\": \""+key+"\"," +
                 "\"Quantity\": \""+sum+"\"" +
                 "}]";
+//        System.out.println(kq);
         out.collect(kq);
     }
 }

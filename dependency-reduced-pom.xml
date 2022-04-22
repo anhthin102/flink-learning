@@ -106,10 +106,6 @@
       <name>Apache Development Snapshot Repository</name>
       <url>https://repository.apache.org/content/repositories/snapshots/</url>
     </repository>
-    <repository>
-      <id>central</id>
-      <url>http://repo.maven.apache.org/maven2/</url>
-    </repository>
   </repositories>
   <dependencies>
     <dependency>
