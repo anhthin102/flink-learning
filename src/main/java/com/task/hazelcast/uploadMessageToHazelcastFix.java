@@ -40,8 +40,8 @@ public class uploadMessageToHazelcastFix {
         message = message.flatMap(new ShowMessageModel());
         DataStream<Tuple2<Integer, Integer>> groupMessage= message.keyBy(new KeyByDescription())
                 .process(new StatefulReduceFunc());
-        DataStream<String> stringGroupMessage = groupMessage.flatMap(new pusToHazelcastv1());
-//        stringGroupMessage = stringGroupMessage.flatMap(new ShowMessageFromHazelcast());
+        DataStream<String> stringGroupMessage = groupMessage.flatMap(new pusToHazelcastv2());
+        stringGroupMessage = stringGroupMessage.flatMap(new ShowMessageFromHazelcast());
 //        groupMessage.print();
 //        groupMessage.addSink(flinkKafkaProducer);
 
