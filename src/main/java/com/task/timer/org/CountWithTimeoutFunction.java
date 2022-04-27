@@ -62,11 +62,11 @@ public class CountWithTimeoutFunction extends KeyedProcessFunction<Integer, Mess
         // get the state for the key that scheduled the timer
         CountWithTimestamp result = state.value();
 
-        System.out.println("TimerNoCondition");
+        System.out.println("NO condition key:"+result.key+ " count: "+result.count);
         // check if this is an outdated timer or the latest timer
         if (timestamp == result.lastModified + 30000) {
             // emit the state on timeout
-            System.out.println("TimerWithCondition");
+            System.out.println("WITH condition key:"+result.key+ " count: "+result.count);
             out.collect(new Tuple2<Integer, Integer>(result.key, result.count));
         }
     }
