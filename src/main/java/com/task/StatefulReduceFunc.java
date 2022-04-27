@@ -24,5 +24,4 @@ public class StatefulReduceFunc extends KeyedProcessFunction<Integer, MessageMod
          sum=getRuntimeContext().getState(valueStateDescriptor);
      }
 
-
 }

@@ -34,7 +34,7 @@ public class StatefulTask {
                 .process(new StatefulReduceFunc());
         DataStream<String> stringGroupMessage = groupMessage.flatMap(new convertTupleToString());
         stringGroupMessage.addSink(flinkKafkaProducer);
-//        groupMessage.print();
+        groupMessage.print();
 //        groupMessage.addSink(flinkKafkaProducer);
         env.execute();
 
