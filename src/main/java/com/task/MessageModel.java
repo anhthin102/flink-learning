@@ -7,6 +7,10 @@ public class MessageModel {
         this.Quantity=d.Quantity();
 
     }
+    public MessageModel(int i, int q){
+        this.Id=i;
+        this.Quantity=q;
+    }
     public int Id;
     public int Quantity;
 
