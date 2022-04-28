@@ -1,15 +1,15 @@
-package com.task.timer.org;
+package com.task.windowtime;
 
 import com.task.MessageModel;
+import com.task.timer.org.CountWithTimestamp;
 import org.apache.flink.api.common.state.ValueState;
 import org.apache.flink.api.common.state.ValueStateDescriptor;
-import org.apache.flink.api.java.tuple.Tuple;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.functions.KeyedProcessFunction;
 import org.apache.flink.util.Collector;
 
-public class CountWithTimeoutFunction extends KeyedProcessFunction<Integer, MessageModel, Tuple2<Integer, Integer>> {
+public class CountWithTimeWindow extends KeyedProcessFunction<Integer, MessageModel, Tuple2<Integer, Integer>> {
 
     /** The state that is maintained by this process function */
     private ValueState<CountWithTimestamp> state;
@@ -45,9 +45,8 @@ public class CountWithTimeoutFunction extends KeyedProcessFunction<Integer, Mess
         state.update(current);
 
         // schedule the next timer 60 seconds from the current event time
-        //ctx.timerService().registerEventTimeTimer(current.lastModified + 30000);
+        //ctx.timerService().registerEventTimeTimer(current.lastModified + 60000);
         ctx.timerService().registerProcessingTimeTimer(current.lastModified + 30000);
-
         /*if(current.key==1){
             System.out.println("id=1");
         }*/

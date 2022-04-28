@@ -25,11 +25,12 @@ public class Kafka_Flink_Apply {
         DataStream<String> stringInputStream = environment.addSource(flinkKafkaConsumer);
 //        stringInputStream.print();
         DataStream<MessageModel> message = stringInputStream.flatMap(new Tokenizer ());
-        message = message.flatMap(new ShowMessageModel());
+//        message = message.flatMap(new ShowMessageModel());
 
         DataStream<String> groupMessage= message.keyBy(new KeyByDescription())
                 .window(TumblingProcessingTimeWindows.of(org.apache.flink.streaming.api.windowing.time.Time.seconds(60)))
                 .process(new ProcessWindow());
+        groupMessage.print();
         groupMessage.addSink(flinkKafkaProducer);
         environment.execute();
     }
