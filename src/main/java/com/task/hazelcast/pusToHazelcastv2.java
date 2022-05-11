@@ -30,9 +30,9 @@ public class pusToHazelcastv2 extends RichFlatMapFunction<Tuple2<Integer, Intege
             Integer v = entry.getValue();
             System.out.println("key: " + k + ", value: " + v);
         }
-        System.out.println( "Map Size:" + mapMessageFlink.size() );
-//        System.out.println("Message with Id "+ t._1+ ": "+mapMessageFlink.get(t._1));
-//        System.out.println("Map Size:" + mapMessageFlink.size());
+/*        System.out.println( "Map Size:" + mapMessageFlink.size() );
+        System.out.println("Message with Id "+ t._1+ ": "+mapMessageFlink.get(t._1));*/
+//        System.out.println("Map Size:" + mapMessageFlink.size());*/
         out.collect(kq);
 
     }
