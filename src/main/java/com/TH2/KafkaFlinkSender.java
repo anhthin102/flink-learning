@@ -19,7 +19,7 @@ public class KafkaFlinkSender {
 
         stringOutputStream.addSink(flinkKafkaProducer);
 
-        environment.execute();
+        environment.execute("KafkaFlinkSender");
     }
 
     public static class StreamGenerator implements SourceFunction<String> {
